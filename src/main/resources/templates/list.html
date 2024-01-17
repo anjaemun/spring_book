@@ -3,9 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	table, tr, td, th {
+		border: 1px solid black;
+		border-collapse: collapse;
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 	<h2>도서 목록</h2>
+	<a href = "/">시작 화면</a>
 	<table>
 		<tr>
 			<th>도서명</th>
@@ -14,7 +22,10 @@
 			<th>가격</th>
 		</tr>
 		<tr th:each="book: ${bookList}">
-			<td th:text="${book.bookName}"></td>
+			<td th:text = "${book.id}"></td>
+			<td>
+				<a href = "@{|/book/${book.id}}|" th:text="${book.bookName}"></a>
+			</td>
 			<td th:text="${book.bookAuthor}"></td>
 			<td th:text="${book.bookPublisher}"></td>
 			<td th:text="${book.bookPrice}"></td>
