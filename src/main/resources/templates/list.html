@@ -24,7 +24,7 @@
 		<tr th:each="book: ${bookList}">
 			<td th:text = "${book.id}"></td>
 			<td>
-				<a href = "@{|/book/${book.id}}|" th:text="${book.bookName}"></a>
+				<a th:text="${book.bookName}"></a>
 			</td>
 			<td th:text="${book.bookAuthor}"></td>
 			<td th:text="${book.bookPublisher}"></td>
@@ -41,7 +41,7 @@
 		// 1번 클릭 => /book/1
 		// 2번 클릭 => /book/2
 		// location.href="/book/" + id;
-		location.href=`/list/${id}`;
+		location.href=`/book/${id}`;
 	}
 </script>
 </body>
