@@ -29,4 +29,14 @@ public class BookRepository {
 		// TODO Auto-generated method stub
 		return sql.selectOne("Book.findById",id);
 	}
+
+	public void delete(Long id) {
+		sql.delete("Book.delete", id);
+		
+	}
+
+	public void update(BookDTO bookDTO) {
+		// TODO Auto-generated method stub
+		sql.update("Book.update",bookDTO);
+	}
 }

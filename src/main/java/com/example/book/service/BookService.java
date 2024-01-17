@@ -32,4 +32,14 @@ public class BookService {
 		// TODO Auto-generated method stub
 		return bookRepository.findById(id);
 	}
+
+	public void delete(Long id) {
+		bookRepository.delete(id);
+		
+	}
+
+	public void update(BookDTO bookDTO) {
+		// TODO Auto-generated method stub
+		bookRepository.update(bookDTO);
+	}
 }
